@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using(Html.BeginForm("Index","Home",FormMethod.Post))
+{
+    <div>
+        <label>Enter Long URL : </label>
+        <input type="text" name="longurl" id="longurl" />
+    </div>
+    <div>
+        <input type="submit" value="Submit"/>
+    </div>
+
+}
+@if (@ViewBag.flagvalue)
+{
+    <div>
+        <label>Short URL is : </label>
+    </div>    
+    <a href="@ViewBag.shortURL">@ViewBag.shortURL</a>
+}
